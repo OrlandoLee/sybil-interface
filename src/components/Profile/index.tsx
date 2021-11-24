@@ -146,24 +146,20 @@ export default function Profile() {
           Your <span style={{ color: activeProtocol?.primaryColor }}> {activeProtocol?.name}</span> profile
         </TYPE.main>
         {!account ? (
-          <Above1080Only>
-            <TYPE.body fontWeight={500} fontSize="14px" color={activeProtocol?.primaryColor} mb="1rem">
-              Connect wallet to see voting power and link wallet address to Sybil identity.
-            </TYPE.body>
-            {activeProtocol && (
-              <ButtonCustom
-                color={activeProtocol?.primaryColor}
-                bgColor={activeProtocol?.secondaryColor}
-                style={{
-                  fontWeight: 500,
-                  fontSize: '16px',
-                }}
-                onClick={() => toggleWalletModal()}
-              >
-                Connect Wallet
-              </ButtonCustom>
-            )}
-          </Above1080Only>
+          <TYPE.body fontWeight={500} fontSize="14px" color={activeProtocol?.primaryColor} mb="1rem">
+            Connect wallet to see voting power and link wallet address to Sybil identity.
+            <ButtonCustom
+              color={activeProtocol?.primaryColor}
+              bgColor={activeProtocol?.secondaryColor}
+              style={{
+                fontWeight: 500,
+                fontSize: '16px',
+              }}
+              onClick={() => toggleWalletModal()}
+            >
+              Connect Wallet
+            </ButtonCustom>
+          </TYPE.body>
         ) : (
           <AutoColumn gap="16px">
             <WalletSummary />
@@ -204,7 +200,7 @@ export default function Profile() {
       <Modal isOpen={showTwitterFlow} onDismiss={() => setShowTwitterFlow(false)}>
         <TwitterFlow onDismiss={() => setShowTwitterFlow(false)} />
       </Modal>
-      <MobileWrapper>
+      {/* <MobileWrapper>
         <Modal isOpen={showProfileModal} onDismiss={() => setShowProfileModal(false)}>
           <ProfileContent />
         </Modal>
@@ -247,10 +243,10 @@ export default function Profile() {
             )}
           </RowBetween>
         </Card>
-      </MobileWrapper>
-      <Above1080Only>
-        <ProfileContent />
-      </Above1080Only>
+      </MobileWrapper> */}
+      {/* <Above1080Only> */}
+      <ProfileContent />
+      {/* </Above1080Only> */}
     </>
   )
 }

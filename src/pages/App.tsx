@@ -13,6 +13,7 @@ import TwitterAccountQueryParamReader from '../state/social/TwitterAccountQueryP
 import Web3Status from '../components/Web3Status'
 import Delegates from './Delegates'
 import Proposals from './Proposals'
+import Identities from './Identities'
 import ProposalDetails from '../components/governance/ProposalDetails'
 import DelegateInfo from './DelegateInfo'
 import DelegateModal from '../components/vote/DelegateModal'
@@ -77,6 +78,7 @@ export default function App() {
           <TopLevelModals />
           <Web3ReactManager>
             <Switch>
+              <Route exact strict path="/connect" component={Identities} />
               <Route exact strict path="/delegates/:protocolID" component={Delegates} />
               <Route exact strict path="/proposals/:protocolID" component={Proposals} />
               <Route exact strict path="/proposals/:protocolID/:proposalID" component={ProposalDetails} />
@@ -85,7 +87,7 @@ export default function App() {
             </Switch>
           </Web3ReactManager>
         </ContentWrapper>
-        <Profile />
+        {/* <Profile /> */}
       </SiteWrapper>
     </Suspense>
   )
