@@ -17,18 +17,9 @@ import Profile from '../components/Profile'
 
 import { Above1080Only, Below1080Only } from '../theme/components'
 
-export default function Identities({
-  match: {
-    params: { protocolID },
-  },
-}: RouteComponentProps<{ protocolID?: string }>) {
-  // if valid protocol id passed in, update global active protocol
-  useProtocolUpdate(protocolID)
-
-  // if on testnet, show warning
-  const { chainId } = useActiveWeb3React()
-
-  const [activeProtocol] = useActiveProtocol()
+export default function Identities() {
+  // reuse the protocol id for redirects
+  useProtocolUpdate('orca')
 
   return (
     <BodyWrapper>

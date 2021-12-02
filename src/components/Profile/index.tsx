@@ -147,7 +147,7 @@ export default function Profile() {
         </TYPE.main>
         {!account ? (
           <TYPE.body fontWeight={500} fontSize="14px" color={activeProtocol?.primaryColor} mb="1rem">
-            Connect wallet to see voting power and link wallet address to Sybil identity.
+            Connect wallet to link wallet address to Sybil identity.
             <ButtonCustom
               color={activeProtocol?.primaryColor}
               bgColor={activeProtocol?.secondaryColor}
@@ -185,9 +185,7 @@ export default function Profile() {
               )
             ) : null}
             {!verifiedHandleEntry && account ? (
-              <TYPE.blue fontSize="12px">
-                Connecting your Twitter to your address can help people find you and delegate votes to you.
-              </TYPE.blue>
+              <TYPE.blue fontSize="12px">Connecting your Twitter to your address can help people find you.</TYPE.blue>
             ) : null}
           </AutoColumn>
         )}

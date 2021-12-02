@@ -24,7 +24,7 @@ import OverviewColumn from '../components/governance/OverviewColumn'
 const SiteWrapper = styled.div`
   height: 100vh;
   width: 100%;
-  display: grid;
+  // display: grid;
   grid-template-columns: 320px 1fr 376px;
   overflow: auto;
 
@@ -79,6 +79,7 @@ export default function App() {
           <Web3ReactManager>
             <Switch>
               <Route exact strict path="/connect" component={Identities} />
+              <Route exact strict path="/delegates/orca" component={Identities} />
               <Route exact strict path="/delegates/:protocolID" component={Delegates} />
               <Route exact strict path="/proposals/:protocolID" component={Proposals} />
               <Route exact strict path="/proposals/:protocolID/:proposalID" component={ProposalDetails} />
