@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import styled from 'styled-components'
 import GoogleAnalyticsReporter from '../components/analytics/GoogleAnalyticsReporter'
 import Polling from '../components/Header/Polling'
@@ -79,7 +79,7 @@ export default function App() {
           <Web3ReactManager>
             <Switch>
               <Route exact strict path="/connect" component={Identities} />
-              <Route exact strict path="/delegates/orca" component={Identities} />
+              <Route exact strict path="/delegates/orca" render={() => <Redirect to="/connect" />} />
               <Route exact strict path="/delegates/:protocolID" component={Delegates} />
               <Route exact strict path="/proposals/:protocolID" component={Proposals} />
               <Route exact strict path="/proposals/:protocolID/:proposalID" component={ProposalDetails} />
