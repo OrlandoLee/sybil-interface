@@ -14,12 +14,17 @@ import { RowFixed } from '../components/Row'
 import { WrappedListLogo } from '../components/governance/styled'
 import Tabs from '../components/governance/Tabs'
 import Profile from '../components/Profile'
+import { CONNECT_CONFIG } from '../state/governance/reducer'
+import { useDispatch } from 'react-redux'
+import { updateLastSelectedProtocolID } from '../state/user/actions'
 
 import { Above1080Only, Below1080Only } from '../theme/components'
+import { AppDispatch } from 'state'
 
 export default function Identities() {
-  // reuse the protocol id for redirects
-  useProtocolUpdate('orca')
+  const dispatch = useDispatch<AppDispatch>()
+  // reuse the protocol id 'connect' for redirects purpose
+  dispatch(updateLastSelectedProtocolID({ protocolID: CONNECT_CONFIG.id }))
 
   return (
     <BodyWrapper>

@@ -17,7 +17,6 @@ import PoolLogo from '../../assets/images/pooltogether-icon.png'
 import RadicleLogo from '../../assets/images/radicle-logo.svg'
 import NounsLogo from '../../assets/images/nouns-logo.png'
 import ENSLogo from '../../assets/images/ens.jpeg'
-import OrcaLogo from '../../assets/images/ens.jpeg' //TODO Orlando
 
 import { serializeToken } from '../user/hooks'
 
@@ -161,19 +160,8 @@ export const NOUNS_GOVERNANCE: GovernanceInfo = {
   emoji: EMOJIS[Math.floor(Math.random() * EMOJIS.length)],
 }
 
-export const ORCA_GOVERNANCE_ADDRESS = '0x6f3E6272A167e8AcCb32072d08E0957F9c79223d' // TODO Orlando
-export const ORCA_ADDRESS = '0x9C8fF314C9Bc7F6e59A9d9225Fb22946427eDC03' // TODO Orlando
-const ORCA = new Token(ChainId.MAINNET, ORCA_ADDRESS, 18, 'ORCA', 'Orca Protocal')
-export const ORCA_GOVERNANCE: GovernanceInfo = {
-  id: 'orca',
-  name: 'Orca DAO Governance',
-  logo: OrcaLogo,
-  primaryColor: '#5284ff', // TODO Orlando
-  secondaryColor: '#cfddff', // TODO Orlando
-  token: serializeToken(ORCA),
-  governanceAlphaAddresses: [ORCA_GOVERNANCE_ADDRESS],
-  social: '@OrcaProtocol',
-  emoji: '🌱',
+export const CONNECT_CONFIG = {
+  id: 'connect',
 }
 
 // mapping for routing
@@ -185,7 +173,6 @@ export const SUPPORTED_PROTOCOLS: { [id: string]: GovernanceInfo } = {
   radicle: RADICLE_GOVERNANCE,
   nouns: NOUNS_GOVERNANCE,
   ens: ENS_GOVERNANCE,
-  orca: ORCA_GOVERNANCE,
 }
 
 export const FETCHING_INTERVAL = 50

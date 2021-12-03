@@ -79,7 +79,7 @@ export default function App() {
           <Web3ReactManager>
             <Switch>
               <Route exact strict path="/connect" component={Identities} />
-              <Route exact strict path="/delegates/orca" render={() => <Redirect to="/connect" />} />
+              <Route exact strict path="/delegates/connect" render={() => <Redirect to="/connect" />} />
               <Route exact strict path="/delegates/:protocolID" component={Delegates} />
               <Route exact strict path="/proposals/:protocolID" component={Proposals} />
               <Route exact strict path="/proposals/:protocolID/:proposalID" component={ProposalDetails} />
@@ -88,7 +88,7 @@ export default function App() {
             </Switch>
           </Web3ReactManager>
         </ContentWrapper>
-        {/* <Profile /> */}
+        <Profile />
       </SiteWrapper>
     </Suspense>
   )
