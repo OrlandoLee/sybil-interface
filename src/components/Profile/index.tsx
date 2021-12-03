@@ -198,7 +198,7 @@ export default function Profile() {
       <Modal isOpen={showTwitterFlow} onDismiss={() => setShowTwitterFlow(false)}>
         <TwitterFlow onDismiss={() => setShowTwitterFlow(false)} />
       </Modal>
-      {/* <MobileWrapper>
+      <MobileWrapper>
         <Modal isOpen={showProfileModal} onDismiss={() => setShowProfileModal(false)}>
           <ProfileContent />
         </Modal>
@@ -241,10 +241,10 @@ export default function Profile() {
             )}
           </RowBetween>
         </Card>
-      </MobileWrapper> */}
-      {/* <Above1080Only> */}
-      <ProfileContent />
-      {/* </Above1080Only> */}
+      </MobileWrapper>
+      <Above1080Only>
+        <ProfileContent />
+      </Above1080Only>
     </>
   )
 }
